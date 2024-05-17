@@ -1,7 +1,5 @@
 import { createContext, useState, useEffect } from "react";
 
-/* Koppla ihop med createpost */
-
 export const PostContext = createContext();
 
 export const PostProvider = (props) => {

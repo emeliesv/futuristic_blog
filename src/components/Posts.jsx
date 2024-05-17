@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { PostContext } from "../context/PostContext";
 import { AuthContext } from "../context/AuthContext";
 import { Link } from "react-router-dom";
+import Comments from "./Comments";
 
 /* Om inte inloggad: Tooltip Logga in för att läsa, annars klickbara */
 
@@ -36,6 +37,7 @@ const Posts = () => {
                 <button onClick={() => handleDelete(post.id)}>Delete</button>
               </div>
             )}
+            <Comments postID={post.id} />
           </div>
         );
       })}
