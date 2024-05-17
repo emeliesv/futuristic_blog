@@ -14,7 +14,6 @@ const App = () => {
   return (
     <PostProvider>
       <BrowserRouter>
-        <h1>YAY BLOG</h1>
         <Header />
         <Routes>
           <Route element={<PrivateRoutes />}>

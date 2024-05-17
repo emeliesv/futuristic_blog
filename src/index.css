@@ -1,4 +1,21 @@
-/* @tailwind base;
- */
+@import url("https://fonts.googleapis.com/css2?family=Hepta+Slab:wght@1..900&family=Inter:wght@100..900&display=swap");
+
+@tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  body {
+    @apply font-sans;
+  }
+
+  button {
+    @apply max-w-36 max-h-14 mx-2 px-2 border-solid border-sky-800 border-2 rounded-full bg-sky-900 text-sky-100;
+  }
+}
+
+@layer components {
+  .logo {
+    @apply font-serif font-extrabold;
+  }
+}

@@ -6,7 +6,6 @@ import { AuthContext } from "../context/AuthContext";
 
 const Nav = () => {
   const { currentUser, userLoggedIn } = useContext(AuthContext);
-  console.log(currentUser);
 
   return (
     <nav className="flex col-start-2 justify-end">
