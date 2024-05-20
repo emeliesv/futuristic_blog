@@ -6,16 +6,26 @@
 
 @layer base {
   body {
-    @apply font-sans;
+    @apply font-sans text-purple-950 bg-purple-100;
   }
 
   button {
-    @apply max-w-36 max-h-14 mx-2 px-2 border-solid border-sky-800 border-2 rounded-full bg-sky-900 text-sky-100;
+    @apply w-32 h-10 mx-2 px-2 border-purple-300 border-2 border-solid rounded-full bg-purple-300 hover:bg-purple-400 text-purple-900 hover:text-purple-50 font-bold text-base shadow-md;
+  }
+
+  h2 {
+    @apply text-2xl font-bold;
+  }
+  h3 {
+    @apply text-lg font-bold;
   }
 }
 
 @layer components {
   .logo {
-    @apply font-serif font-extrabold;
+    @apply font-serif font-extrabold text-2xl text-purple-900 hover:text-purple-800;
+  }
+  .buttonstyle {
+    @apply flex justify-center items-center w-32 h-10 mx-2 px-2 border-purple-300 border-2 border-solid rounded-full bg-purple-300 hover:bg-purple-400 text-purple-900 hover:text-purple-50 font-bold text-base shadow-md;
   }
 }

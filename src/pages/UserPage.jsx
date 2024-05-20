@@ -3,10 +3,10 @@ import CreatePost from "../components/CreatePost";
 
 const UserPage = () => {
   return (
-    <>
-      <h2>Share your thoughts:</h2>
+    <section className="flex flex-col items-center">
+      <h2 className="pb-40 pt-20">Share your thoughts:</h2>
       <CreatePost />
-    </>
+    </section>
   );
 };
 

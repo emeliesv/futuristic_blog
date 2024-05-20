@@ -69,17 +69,21 @@ const CreatePost = () => {
   };
 
   return (
-    <form className="flex flex-column bg-sky-200 border-2 border-solid border-sky-400">
+    <form className="flex flex-col w-4/5 shadow-xl pb-5 border border-purple-900 rounded-md">
       <input
+        className="py-5 px-4 border-solid rounded-t-md"
         type="text"
         name="title"
         value={userInput.title}
+        placeholder="Write title here.."
         onChange={handleChange}
       />
       <input
+        className="py-5 px-4 mb-5 min-h-32"
         type="text"
         name="bodyText"
         value={userInput.bodyText}
+        placeholder="Write content here.."
         onChange={handleChange}
       />
       <button type="submit" onClick={postID ? handleEdit : handleSubmit}>

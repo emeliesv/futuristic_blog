@@ -20,23 +20,28 @@ const Posts = () => {
       {posts.map((post) => {
         return (
           <div
-            className="border-solid border-sky-950 border-2 m-5 p-5"
+            className="border-solid border-purple-950 border m-5 p-5 bg-purple-50"
             key={post.id}
           >
-            <h3 className="text-sky-800 font-medium">{post.title}</h3>
+            <h3 className="text-purple-800 font-medium text-xl">
+              {post.title}
+            </h3>
             <p className="italic font-light">{post.author}</p>
-            <p>{post.bodyText}</p>
+            <p className="mb-5">{post.bodyText}</p>
             {currentUser.email === post.author && (
-              <div className="flex">
-                <Link
-                  className="mx-2 px-2 border-solid border-sky-800 border-2 rounded-full bg-sky-900 text-sky-100"
-                  to={`/edit/${post.id}`}
-                >
+              <div className="flex my-5">
+                <Link className="buttonstyle" to={`/edit/${post.id}`}>
                   Edit
                 </Link>
                 <button onClick={() => handleDelete(post.id)}>Delete</button>
               </div>
             )}
+            <Link
+              to={`/${post.id}`}
+              className="font-bold text-purple-900 underline hover:text-purple-700"
+            >
+              Read more
+            </Link>
             <Comments postID={post.id} />
           </div>
         );

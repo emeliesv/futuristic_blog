@@ -44,7 +44,7 @@ const AddComment = ({ postID }) => {
         onChange={handleChange}
         placeholder="Your name.."
       />
-      <button type="submit" onClick={submitComment}>
+      <button type="submit" onClick={submitComment} className="text-sm">
         Add Comment
       </button>
     </form>

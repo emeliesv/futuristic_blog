@@ -5,24 +5,23 @@ import { signOutUser } from "../firebase/authFunctions";
 import { AuthContext } from "../context/AuthContext";
 
 const Nav = () => {
-  const { currentUser, userLoggedIn } = useContext(AuthContext);
+  const { userLoggedIn } = useContext(AuthContext);
 
   return (
-    <nav className="flex col-start-2 justify-end">
+    <nav className="flex justify-end items-center">
       {userLoggedIn ? (
         <>
-          <p className="mx-2">Welcome {currentUser.email}!</p>
+          <Link to={"/about"} className="mx-2 hover:underline">
+            About
+          </Link>
+          <Link to={"/userpage"} className="mx-2 hover:underline">
+            Your page
+          </Link>
           <Button
             buttonText="Log out"
             toggleLogIn={signOutUser}
             className="mx-2"
           />
-          <Link to={"/about"} className="mx-2">
-            About
-          </Link>
-          <Link to={"/userpage"} className="mx-2">
-            Your page
-          </Link>
         </>
       ) : (
         <Link to={"/login"} className="mx-2">
