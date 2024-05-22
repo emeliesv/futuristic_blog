@@ -46,6 +46,7 @@ const CreatePost = () => {
         title: userInput.title,
         bodyText: userInput.bodyText,
         author: currentUser.email,
+        category: userInput.category,
       };
       setPosts([...posts, newPost]);
     }
@@ -60,6 +61,7 @@ const CreatePost = () => {
           ...post,
           title: userInput.title,
           bodyText: userInput.bodyText,
+          category: userInput.category,
         };
       }
       return post;
@@ -86,6 +88,18 @@ const CreatePost = () => {
         placeholder="Write content here.."
         onChange={handleChange}
       />
+      <select
+        className="py-3 px-4 mb-5 border-solid rounded-md"
+        name="category"
+        value={userInput.category}
+        onChange={handleChange}
+      >
+        <option value={""}>Select a category..</option>
+        <option value={"Everyday"}>Everyday</option>
+        <option value={"Cars"}>Cars</option>
+        <option value={"Cooking"}>Cooking</option>
+        <option value={"Garden"}>Garden</option>
+      </select>
       <button type="submit" onClick={postID ? handleEdit : handleSubmit}>
         {postID ? "Save" : "Create post"}
       </button>
