@@ -22,7 +22,7 @@ const Posts = () => {
         .map((post) => {
           return (
             <div
-              className="border-solid border-purple-950 border m-5 p-5 bg-purple-50"
+              className="border-solid border-purple-950 border m-5 p-5 bg-purple-50 max-w-2xl"
               key={post.id}
             >
               <h3 className="text-purple-800 font-medium text-xl">

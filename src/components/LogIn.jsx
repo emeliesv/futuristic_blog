@@ -19,18 +19,26 @@ const LogIn = () => {
   };
 
   return (
-    <section>
+    <section className="flex flex-col justify-center items-center">
       {userLoggedIn && <Navigate to={"/home"} replace={true} />}
       <div>
-        <h3>Welcome back User!</h3>
+        <h3>Welcome back!</h3>
+        <h4 className="font-medium">
+          Let's log in to read and write amazing posts!
+        </h4>
       </div>
 
-      <form onSubmit={onSubmit}>
-        <div>
+      <form
+        onSubmit={onSubmit}
+        className="max-w-80 p-8 m-20 bg-purple-50 shadow-md border border-purple-950"
+      >
+        <div className="m-2">
           <label>Email</label>
           <input
+            className="border border-purple-950 px-3"
             type="email"
             autoComplete="email"
+            placeholder="Enter email"
             required
             value={email}
             onChange={(event) => {
@@ -39,12 +47,14 @@ const LogIn = () => {
           />
         </div>
 
-        <div>
+        <div className="m-2">
           <label>Password</label>
           <input
+            className="border border-purple-950 px-3"
             type="password"
             autoComplete="current-password"
             required
+            placeholder="Enter password"
             value={password}
             onChange={(event) => {
               setPassword(event.target.value);
@@ -59,8 +69,10 @@ const LogIn = () => {
       </form>
 
       <div>
-        <p>Don&apos;t an account?</p>
-        <Link to={"/register"}>Sign up</Link>
+        <p className="font-semibold">Don&apos;t an account?</p>
+        <Link to={"/register"} className="hover:underline">
+          Sign up
+        </Link>
       </div>
     </section>
   );

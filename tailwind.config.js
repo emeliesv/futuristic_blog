@@ -7,6 +7,9 @@ export default {
         sans: ["Inter", "sans-serif"],
         serif: ["Hepta slab", "serif"],
       },
+      transformOrigin: {
+        "custom-1px": "1px",
+      },
     },
   },
   plugins: [],
