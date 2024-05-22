@@ -28,8 +28,9 @@ const Posts = () => {
               <h3 className="text-purple-800 font-medium text-xl">
                 {post.title}
               </h3>
-              <p className="italic font-light">{post.author}</p>
+              <p className="italic font-light">Written by: {post.author}</p>
               <p className="mb-5">{post.bodyText}</p>
+              <p className="italic font-medium">{post.category}</p>
               {currentUser.email === post.author && (
                 <div className="flex my-5">
                   <Link className="buttonstyle" to={`/edit/${post.id}`}>
