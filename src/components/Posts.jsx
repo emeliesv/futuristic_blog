@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { PostContext } from "../context/PostContext";
 import { AuthContext } from "../context/AuthContext";
 import { Link } from "react-router-dom";
@@ -9,15 +9,36 @@ import Comments from "./Comments";
 const Posts = () => {
   const { posts, setPosts } = useContext(PostContext);
   const { currentUser } = useContext(AuthContext);
+  const [categoryPosts, setCategoryPosts] = useState([]);
 
   const handleDelete = (id) => {
     const updatedPostArray = posts.filter((post) => post.id !== id);
     setPosts(updatedPostArray);
   };
 
+  const filterByCategory = (category) => {
+    if (category === "All") {
+      setCategoryPosts([]);
+    } else {
+      const filteredByCategory = posts.filter(
+        (post) => post.category == category
+      );
+      setCategoryPosts(filteredByCategory);
+    }
+  };
+
+  const postList = categoryPosts.length > 0 ? categoryPosts : posts;
+
   return (
     <div>
-      {posts
+      <div className="flex">
+        <button onClick={() => filterByCategory("All")}>All</button>
+        <button onClick={() => filterByCategory("Everyday")}>Everyday</button>
+        <button onClick={() => filterByCategory("Cars")}>Cars</button>
+        <button onClick={() => filterByCategory("Garden")}>Garden</button>
+        <button onClick={() => filterByCategory("Cooking")}>Cooking</button>
+      </div>
+      {postList
         .sort((a, b) => b.id - a.id)
         .map((post) => {
           return (
