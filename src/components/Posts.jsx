@@ -4,8 +4,6 @@ import { AuthContext } from "../context/AuthContext";
 import { Link } from "react-router-dom";
 import Comments from "./Comments";
 
-/* Om inte inloggad: Tooltip Logga in för att läsa, annars klickbara */
-
 const Posts = () => {
   const { posts, setPosts } = useContext(PostContext);
   const { currentUser } = useContext(AuthContext);
@@ -31,12 +29,22 @@ const Posts = () => {
 
   return (
     <div>
-      <div className="flex">
-        <button onClick={() => filterByCategory("All")}>All</button>
-        <button onClick={() => filterByCategory("Everyday")}>Everyday</button>
-        <button onClick={() => filterByCategory("Cars")}>Cars</button>
-        <button onClick={() => filterByCategory("Garden")}>Garden</button>
-        <button onClick={() => filterByCategory("Cooking")}>Cooking</button>
+      <div className="flex flex-wrap justify-around">
+        <button onClick={() => filterByCategory("All")} className="my-2">
+          All
+        </button>
+        <button onClick={() => filterByCategory("Everyday")} className="my-2">
+          Everyday
+        </button>
+        <button onClick={() => filterByCategory("Cars")} className="my-2">
+          Cars
+        </button>
+        <button onClick={() => filterByCategory("Garden")} className="my-2">
+          Garden
+        </button>
+        <button onClick={() => filterByCategory("Cooking")} className="my-2">
+          Cooking
+        </button>
       </div>
       {postList
         .sort((a, b) => b.id - a.id)
