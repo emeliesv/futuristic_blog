@@ -6,6 +6,7 @@ export const CommentProvider = (props) => {
   const [comments, setComments] = useState(
     JSON.parse(localStorage.getItem("comments")) || [
       {
+        id: 2,
         body: "Wow! Insiktsfullt",
         author: "Jag är också anonym..",
         postID: 1,
