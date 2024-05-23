@@ -10,7 +10,6 @@ import LogIn from "./components/LogIn";
 import RegisterUser from "./components/RegisterUser";
 import PrivateRoutes from "./components/PrivateRoutes";
 import CreatePost from "./components/CreatePost";
-import PublicLanding from "./pages/PublicLanding";
 import SingleBlogPost from "./pages/SingleBlogPost";
 
 const App = () => {
@@ -28,10 +27,8 @@ const App = () => {
               <Route path="/edit/:postID" element={<CreatePost />} />
               <Route path="/:postID" element={<SingleBlogPost />} />
             </Route>
-
             <Route path="/login" element={<LogIn />} />
             <Route path="/register" element={<RegisterUser />} />
-            <Route path="/" element={<PublicLanding />} />
           </Routes>
         </BrowserRouter>
       </CommentProvider>

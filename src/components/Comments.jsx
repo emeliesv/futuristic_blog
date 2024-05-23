@@ -10,7 +10,7 @@ const Comments = ({ postID }) => {
   );
 
   return (
-    <div>
+    <>
       <AddComment postID={postID} />
       {filteredComments.map((comment) => {
         return (
@@ -20,7 +20,7 @@ const Comments = ({ postID }) => {
           </div>
         );
       })}
-    </div>
+    </>
   );
 };
 

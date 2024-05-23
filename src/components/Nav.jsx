@@ -10,7 +10,6 @@ const Nav = () => {
   const [hamburgerOpen, setHamburgerOpen] = useState(false);
 
   const toggleBurger = () => {
-    console.log("Click!");
     setHamburgerOpen(!hamburgerOpen);
   };
 
@@ -32,7 +31,10 @@ const Nav = () => {
             />
           </div>
 
-          <div className="block md:hidden" onClick={toggleBurger}>
+          <div
+            className="block md:hidden absolute top-7 right-10"
+            onClick={toggleBurger}
+          >
             <Burger isOpen={hamburgerOpen} />
             {hamburgerOpen && (
               <div className="flex flex-col">
