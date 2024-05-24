@@ -2,6 +2,7 @@ import { Link, useParams } from "react-router-dom";
 import { useContext } from "react";
 import { PostContext } from "../context/PostContext";
 import { CommentContext } from "../context/CommentContext";
+import AddComment from "../components/AddComment";
 
 const SingleBlogPost = () => {
   const { posts } = useContext(PostContext);
@@ -25,6 +26,12 @@ const SingleBlogPost = () => {
       </h3>
       <p>{singlePost.bodyText}</p>
       <p className="font-semibold italic my-5">{singlePost.category}</p>
+      {commentflow.length > 0 ? (
+        <h4 className="font-semibold">Comments: {commentflow.length}</h4>
+      ) : (
+        <h4 className="font-semibold">There are no comments yet</h4>
+      )}
+      <AddComment postID={postID} />
       {commentflow.map((comment) => {
         return (
           <div
