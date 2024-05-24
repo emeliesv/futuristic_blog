@@ -71,9 +71,9 @@ const CreatePost = () => {
   };
 
   return (
-    <form className="flex flex-col w-4/5 shadow-xl pb-5 border border-purple-900 rounded-md">
+    <form className="flex flex-col w-9/12 mb-36 shadow-xl pb-5 border border-purple-900 rounded-md">
       <input
-        className="py-5 px-4 border-solid rounded-t-md"
+        className="py-5 px-4 border-solid border-b rounded-t-md"
         type="text"
         name="title"
         value={userInput.title}
@@ -89,7 +89,7 @@ const CreatePost = () => {
         onChange={handleChange}
       />
       <select
-        className="py-3 px-4 mb-5 border-solid rounded-md"
+        className="py-3 px-4 my-5 mx-2 w-60 border border-solid border-purple-950"
         name="category"
         value={userInput.category}
         onChange={handleChange}

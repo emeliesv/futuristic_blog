@@ -1,13 +1,13 @@
-import { useContext } from "react";
-import { AuthContext } from "../context/AuthContext";
+import heroimg from "../assets/duotone.png";
 
 const Hero = () => {
-  const { currentUser } = useContext(AuthContext);
   return (
-    <div className="h-80 flex flex-col items-center justify-center">
-      <h2>Welcome</h2>
-      <h2 className="py-2">{currentUser.email}</h2>
-    </div>
+    <div
+      className="w-full h-96 flex flex-col items-center justify-center bg-cover bg-center mb-10"
+      style={{
+        backgroundImage: `url(${heroimg})`,
+      }}
+    ></div>
   );
 };
 

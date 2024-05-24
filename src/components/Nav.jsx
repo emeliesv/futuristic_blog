@@ -37,7 +37,7 @@ const Nav = () => {
           >
             <Burger isOpen={hamburgerOpen} />
             {hamburgerOpen && (
-              <div className="flex flex-col">
+              <div className="flex flex-col bg-purple-100 pb-4 pr-2 border border-solid border-purple-950">
                 <Link
                   to={"/about"}
                   className="mt-2 underline font-semibold text-right"
