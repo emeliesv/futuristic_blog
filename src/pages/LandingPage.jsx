@@ -5,7 +5,7 @@ const LandingPage = () => {
   return (
     <section className="flex flex-col items-center">
       <Hero />
-      <h2>Read amazing stuff!</h2>
+      <h2 className="m-5">Read amazing stuff!</h2>
       <Posts />
     </section>
   );

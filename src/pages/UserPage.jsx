@@ -4,7 +4,7 @@ import CreatePost from "../components/CreatePost";
 const UserPage = () => {
   return (
     <section className="flex flex-col items-center">
-      <h2 className="pb-40 pt-20">Share your thoughts:</h2>
+      <h2 className="pb-16 pt-10">Share your thoughts:</h2>
       <CreatePost />
     </section>
   );
